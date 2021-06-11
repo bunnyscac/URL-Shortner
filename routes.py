@@ -7,7 +7,7 @@ shortner = Blueprint('shortner', __name__)
 
 
 @shortner.route('/<short_url>')
-def redirect_url_to(short_url):
+def redirect_to_url(short_url):
     return ""
 
 
@@ -18,8 +18,7 @@ def create_link():
     db.session.add(link)
     db.session.commit()
 
-    return render_template('link_success.html',
-                           new_url=link.short_url, original_url=link.original_url)
+    return render_template('link_success.html', new_url=link.short_url, original_url=link.original_url)
 
 
 @shortner.route('/')
