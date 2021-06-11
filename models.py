@@ -4,7 +4,7 @@ import string
 from random import choices
 
 
-class Link(db.model):
+class Link(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     original_url = db.Column(db.String(1024))
     short_url = db.Column(db.String(6), unique=True)
